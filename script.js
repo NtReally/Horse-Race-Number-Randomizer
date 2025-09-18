@@ -24,3 +24,34 @@ function spawnHorse() {
 }
 
 setInterval(spawnHorse, 2000);
+
+//-----------------------------------------------------------//
+
+var numinput = document.getElementById("horseCountInput");
+var startButton = document.getElementById("startRaceBtn");
+
+numinput.addEventListener('input', function() {
+    let value = parseInt(numinput.value, 10);
+    let horsesdiv = document.querySelector('.horses');
+    horsesdiv.innerHTML = '';
+
+    if (isNaN(value) || value < 1) {
+        value = 1;
+        numinput.value = 1;
+    } else if (value > 30) {
+        value = 30;
+        numinput.value = 30;
+    }
+
+    for (let i = 0; i < value; i++) {
+        let horse = document.createElement('span');
+        horse.textContent = array[Math.floor(Math.random() * array.length)];;
+        horse.style.position = 'flex';
+        horse.style.justifyContent = 'center';
+        horse.style.fontSize = '3rem';
+        horse.style.marginLeft = 'auto'; // ts doesnt work pmo so much
+        horse.style.marginRight = 'auto'; // ts doesnt work pmo so much
+        horsesdiv.appendChild(horse);
+    }
+});
+

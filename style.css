@@ -13,11 +13,11 @@ body {
 .headers {
     text-align: center;
     background-color: #f3c299;
-    padding: 1vw
+    padding: 0.1vw
 }
 
 .headers h1 {
-    font-size: 10vw;
+    font-size: 8vw;
     color: rgb(247, 167, 93);
     margin: 0;
 }
